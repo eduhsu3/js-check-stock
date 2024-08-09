@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>자판기 재고관리</title>
+        <style>
+            #radioDiv {
+            }
+            #radioDiv label {
+                display: inline-block;
+                margin-right: 15px;
+                letter-spacing: -0.05em;
+            }
+            #radioDiv label.disabled {
+                text-decoration: line-through;
+                color: #bbb;
+            }
+
+            #manageList {
+            }
+            #manageList li + li {
+                margin-top: 4px;
+            }
+            #manageList li input {
+                padding: 2px 4px;
+            }
+            #manageList li input:nth-of-type(2) {
+                width: 80px;
+                text-align: right;
+                padding-right: 15px;
+            }
+            #manageList li input:nth-of-type(3) {
+                width: 80px;
+                text-align: right;
+                padding-right: 15px;
+            }
+            .manage_btn_group {
+                width: 460px;
+                text-align: right;
+            }
+            .control_btn {
+                display: inline-block;
+                margin-right: 15px;
+            }
+            .control_btn button {
+                box-sizing: border-box;
+                height: 24px;
+                line-height: 1;
+                min-width: 30px;
+                padding: 0;
+                font-size: 18px;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="checkRemaindBtn">재고확인</button>
+        <span style="padding-left: 40px"></span>
+        <!-- <button id="clearBtn">재고DB삭제</button> -->
+        <button id="productManageBtn">상품/재고 관리</button>
+
+        <!-- 관리 화면 -->
+        <div id="manageDiv" style="display: none">
+            <!-- 수정관련 버튼 -->
+            <div class="manage_btn_group" style="display: none">
+                <span class="control_btn">
+                    <button id="addBtn">+</button>
+                    <button id="removeBtn">-</button>
+                </span>
+
+                <span>
+                    <button id="manageSaveBtn">저장</button>
+                    <!-- <button id="manageCancelBtn">취소</button> -->
+                </span>
+            </div>
+            <!-- 입력폼 목록 -->
+            <ul id="manageList"></ul>
+        </div>
+
+        <!-- 구매 화면 -->
+        <ul id="remaindUl" style="display: none"></ul>
+        <br />
+        <br />
+        <div id="radioDiv" style="display: none"></div>
+        <br />
+        <button id="buyBtn" style="display: none">구매하기</button>
+
+        <script src="script.js"></script>
+    </body>
+</html>
